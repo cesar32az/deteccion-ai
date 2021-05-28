@@ -15,8 +15,24 @@
                   @change="onFileChange"
                 ></v-file-input>
               </v-col>
+
               <v-col cols="12" md="4">
-                <v-img max-width="200" v-if="url" :src="url" />
+                <v-card outlined v-if="url">
+                  <v-card-text>
+                    <v-img max-width="200" max-height="300" :src="url" />
+                  </v-card-text>
+                </v-card>
+                <v-card
+                  outlined
+                  v-else
+                  width="400"
+                  height="250"
+                  class="d-flex justify-center align-center"
+                >
+                  <v-card-text class="text-center">
+                    Esperando imágen...
+                  </v-card-text>
+                </v-card>
               </v-col>
             </v-row>
           </v-card-text>
